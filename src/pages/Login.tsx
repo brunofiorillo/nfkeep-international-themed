@@ -67,7 +67,7 @@ export default function Login() {
           setLoading(false);
           return;
         }
-        const redirectUrl = `${SITE_URL}/dashboard`;
+        const redirectUrl = `${SITE_URL}/`;
         const { error } = await supabase.auth.signUp({
           email,
           password,
@@ -89,7 +89,7 @@ export default function Login() {
 
   const handleGoogleAuth = async () => {
     try {
-      const redirectUrl = `${SITE_URL}/dashboard`;
+      const redirectUrl = `${SITE_URL}/`;
       const { error } = await supabase.auth.signInWithOAuth({
         provider: "google",
         options: { redirectTo: redirectUrl },
